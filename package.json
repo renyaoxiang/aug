@@ -1,0 +1,56 @@
+{
+  "name": "renyaoxiang-aug",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "pm2 start config/pm2.server.json",
+    "restart": "pm2 restart config/pm2.server.json",
+    "stop": "pm2 kill",
+    "webpack-backend": "./node_modules/.bin/webpack --config config/webpack.backend.js --watch",
+    "build-frontend": "./node_modules/.bin/webpack --config config/webpack.frontend.js",
+    "dev-frontend": "./node_modules/.bin/webpack --config config/webpack.frontend.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renyaoxiang/aug.git"
+  },
+  "author": "renyaoxiang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renyaoxiang/aug/issues"
+  },
+  "homepage": "https://github.com/renyaoxiang/aug#readme",
+  "dependencies": {
+    "@types/cheerio": "^0.22.2",
+    "@types/express": "^4.0.36",
+    "@types/fs-extra": "^4.0.0",
+    "@types/koa": "^2.0.39",
+    "@types/mysql": "0.0.34",
+    "@types/request": "^2.0.0",
+    "@types/sequelize": "^4.0.68",
+    "aws-sdk": "^2.97.0",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.15.4",
+    "fs-extra": "^4.0.1",
+    "koa": "^2.3.0",
+    "mysql": "^2.14.1",
+    "mysql2": "^1.4.0",
+    "pg-hstore": "^2.3.2",
+    "request": "^2.81.0",
+    "request-json": "^0.6.2",
+    "sequelize": "^4.4.3",
+    "tedious": "^2.0.0",
+    "typescript": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/webpack": "^3.0.8",
+    "nodemon": "^1.11.0",
+    "ts-loader": "^2.3.2",
+    "ts-node": "^3.3.0",
+    "tsc": "^1.20150623.0",
+    "tslint": "^5.6.0",
+    "webpack": "^3.5.3"
+  }
+}

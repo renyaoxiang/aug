@@ -1,0 +1,17 @@
+{
+  "name": "aug",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "renyaoxiang <97239080@qq.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/renyaoxiang/aug",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

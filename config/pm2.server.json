@@ -1,0 +1,46 @@
+{
+	"apps": [
+		{
+			"name": "server",
+			"script": "./src/backend/server.ts",
+			"instances": 1,
+			"exec_mode": "fork",
+			"watch": [
+				"src"
+			],
+			"ignore_watch": [
+				"src/test"
+			],
+			"out_file": "./logs/server.log",
+			"error_file": "./logs/server-err.log",
+			"log_date_format": "YYYY-MM-DD HH:mm Z",
+			"combine_logs": true,
+			"listen_timeout": 8000,
+			"kill_timeout": 1600,
+			"env": {
+				"NODE_ENV": "development"
+			}
+		},
+		{
+			"name": "test",
+			"script": "./src/test/main.ts",
+			"instances": 1,
+			"exec_mode": "fork",
+			"watch": [
+				"src/test"
+			],
+			"ignore_watch": [],
+			"out_file": "./logs/test.log",
+			"error_file": "./logs/test-err.log",
+			"log_date_format": "YYYY-MM-DD HH:mm Z",
+			"combine_logs": true,
+			"listen_timeout": 8000,
+			"kill_timeout": 1600,
+			"env": {
+				"NODE_ENV": "development"
+			},
+			"autorestart": true,
+			"restart_delay": 0
+		}
+	]
+}
