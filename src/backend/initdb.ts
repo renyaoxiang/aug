@@ -1,7 +1,8 @@
 import * as mysql from 'mysql'
 import * as Sequelize from 'sequelize'
 import { Next } from '../functions'
-var sequelize = new Sequelize('aug', 'aug', 'aug', {
+
+const sequelize = new Sequelize('aug', 'aug', 'aug', {
 	host: '127.0.0.1',
 	dialect: 'mysql',
 	pool: {
@@ -18,38 +19,24 @@ sequelize
 	.catch(err => {
 		console.error('Unable to connect to the database:', err);
 	});
-declare namespace db {
-	interface User {
-		firstName: string
-		lastName: string
-	}
-	interface UserAttr {
-		firstName: string
-		lastName: string
-	}
-}
 
-export const User = sequelize.define<db.User, db.UserAttr>('user',
-	{
-		firstName: {
-			type: Sequelize.STRING,
-			field: 'first_name'
+export const User = sequelize.define<augDb.User, augDb.UserAttr>('user',
+	{ // Go on reading for further information about primary keys
+		id: {
+			type: Sequelize.INTEGER,
+			autoIncrement: true,
+			primaryKey: true,
+			unique: true
 		},
-		lastName: {
-			type: Sequelize.STRING
+		name: {
+			type: Sequelize.STRING,
+			field: 'name'
 		}
 	}, {
 		freezeTableName: true
 	}
 );
-User.sync({ force: true }).then(function () {
-	// 已创建数据表
-	return User.create({
-		firstName: 'John',
-		lastName: 'Hancock'
-	});
-});
-export const initdb = (): Promise<void> => {
 
+export const initdb = (): Promise<void> => {
 	return Promise.resolve()
 }

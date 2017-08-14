@@ -13,11 +13,12 @@ module.exports = [{
 		extensions: ['.webpack.js', '.web.js', '.ts', '.tsx', '.js'],
 	},
 	module: {
-		rules: [{
-			test: /\.tsx?$/,
-			loader: 'ts-loader',
-			exclude: /node_modules/,
-		}]
+		loaders: [
+			{
+				test: /\.tsx?$/,
+				loader: 'awesome-typescript-loader'
+			}
+		]
 	},
 	target: 'node',
 	plugins: [

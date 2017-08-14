@@ -8,7 +8,9 @@
 			"type": "node",
 			"request": "launch",
 			"name": "server",
-			"program": "${workspaceRoot}/build/backend/server.js"
+			"outFiles": [
+				"${workspaceRoot}/src/backend/server.ts"
+			]
 		}
 	]
 }
